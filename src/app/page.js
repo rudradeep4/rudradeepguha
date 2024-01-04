@@ -1,95 +1,115 @@
+'use client'
 import Image from 'next/image'
-import styles from './page.module.css'
+import { 
+  Box,
+  Grid,
+  Button,
+  useColorMode,
+  useColorModeValue,
+  Flex,
+  Spacer,
+  VStack
+} from '@chakra-ui/react'
+import { theme } from '../../theme'
+import { CheckIcon, CloseIcon } from '@chakra-ui/icons'
+import { useState } from 'react';
+import { AnimatePresence } from 'framer-motion';
+import Content from '@/components/content'
+
 
 export default function Home() {
+  const { colorMode, toggleColorMode } = useColorMode()
+  const bg = useColorModeValue('#F7F6F2', '#1A1A1A')
+
+  const [content, showContent] = useState('')
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    <Grid h='100%' w='100%' bg={bg}>
+      <Box w={['350px', '700px']} py={[8, 16]} position={'absolute'} left={'50%'} transform="translate(-50%, 0)">
+        <Flex>
+          <Image
+            src="/me2_test.svg"
+            alt="main picture"
+            width={300}
+            height={300}
+            priority
+          />
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+          <Spacer />
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+          <VStack align={'end'}>
+            <Button
+              variant='ghost'
+              aria-label="Dark Mode Switch" 
+              size="lg" 
+              fontFamily={theme.fonts.heading}
+              onClick={toggleColorMode}
+              _hover={{textColor: "#FA7B62"}}
+              _active={{textColor:"#FA7B62"}}
+              textColor={colorMode === "light" ? "#000000" : "#FA7B62"}
+            >
+              dark-mode [ {colorMode === "light" ? <CloseIcon boxSize={2} /> : <CheckIcon boxSize={2} />} ]
+            </Button>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
+            <Button
+              variant='ghost'
+              aria-label="home" 
+              size="lg" 
+              fontFamily={theme.fonts.heading}
+              onClick={() => showContent('')}
+              _hover={{textColor: "#FA7B62"}}
+              _active={{textColor:"#FA7B62"}}
+              textColor={content === '' ? "#FA7B62" : colorMode === "light" ? "#000000" : "#FFFFFF"}
+              mt={8}
+            >
+              home [ {content === '' ? <CheckIcon boxSize={2} /> : <CloseIcon boxSize={2} />} ]
+            </Button>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
+            <Button
+              variant='ghost'
+              aria-label="research" 
+              size="lg" 
+              fontFamily={theme.fonts.heading}
+              onClick={() => showContent('research')}
+              _hover={{textColor: "#FA7B62"}}
+              _active={{textColor:"#FA7B62"}}
+              textColor={content === 'research' ? "#FA7B62" : colorMode === "light" ? "#000000" : "#FFFFFF"}
+            >
+              research [ {content === 'research' ? <CheckIcon boxSize={2} /> : <CloseIcon boxSize={2} />} ]
+            </Button>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+            <Button
+              variant='ghost'
+              aria-label="education" 
+              size="lg" 
+              fontFamily={theme.fonts.heading}
+              onClick={() => showContent('education')}
+              _hover={{textColor: "#FA7B62"}}
+              _active={{textColor:"#FA7B62"}}
+              textColor={content === 'education' ? "#FA7B62" : colorMode === "light" ? "#000000" : "#FFFFFF"}
+            >
+              education [ {content === 'education' ? <CheckIcon boxSize={2} /> : <CloseIcon boxSize={2} />} ]
+            </Button>
+
+            <Button
+              variant='ghost'
+              aria-label="publications" 
+              size="lg" 
+              fontFamily={theme.fonts.heading}
+              onClick={() => showContent('publications')}
+              _hover={{textColor: "#FA7B62"}}
+              _active={{textColor:"#FA7B62"}}
+              textColor={content === 'publications' ? "#FA7B62" : colorMode === "light" ? "#000000" : "#FFFFFF"}
+            >
+              publications [ {content === 'publications' ? <CheckIcon boxSize={2} /> : <CloseIcon boxSize={2} />} ]
+            </Button>
+          </VStack>
+        </Flex>
+
+        <AnimatePresence initial={false}>
+          <Content content={content}/>
+        </AnimatePresence>
+      </Box>
+    </Grid>
   )
 }

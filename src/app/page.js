@@ -62,7 +62,7 @@ export default function Home() {
               textColor={content === '' ? "#FA7B62" : colorMode === "light" ? "#000000" : "#FFFFFF"}
               mt={8}
             >
-              home [ {content === '' ? <CheckIcon boxSize={2} /> : <CloseIcon boxSize={2} />} ]
+              home
             </Button>
 
             <Button
@@ -75,7 +75,7 @@ export default function Home() {
               _active={{textColor:"#FA7B62"}}
               textColor={content === 'research' ? "#FA7B62" : colorMode === "light" ? "#000000" : "#FFFFFF"}
             >
-              research [ {content === 'research' ? <CheckIcon boxSize={2} /> : <CloseIcon boxSize={2} />} ]
+              research
             </Button>
 
             <Button
@@ -88,7 +88,7 @@ export default function Home() {
               _active={{textColor:"#FA7B62"}}
               textColor={content === 'education' ? "#FA7B62" : colorMode === "light" ? "#000000" : "#FFFFFF"}
             >
-              education [ {content === 'education' ? <CheckIcon boxSize={2} /> : <CloseIcon boxSize={2} />} ]
+              education
             </Button>
 
             <Button
@@ -101,7 +101,7 @@ export default function Home() {
               _active={{textColor:"#FA7B62"}}
               textColor={content === 'publications' ? "#FA7B62" : colorMode === "light" ? "#000000" : "#FFFFFF"}
             >
-              publications [ {content === 'publications' ? <CheckIcon boxSize={2} /> : <CloseIcon boxSize={2} />} ]
+              publications
             </Button>
           </VStack>
         </Flex>

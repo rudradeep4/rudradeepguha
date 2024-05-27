@@ -24,7 +24,7 @@ export default function Education({ textColor }) {
         exit={{ opacity: 0 }}
       >
         <Heading pt={8} fontFamily={theme.fonts.heading} borderBottomWidth={2} borderBottomColor={"#FA7B62"} color={textColor}>Education</Heading>
-        <List spacing={4} pt={2} fontFamily={theme.fonts.heading} fontSize={'sm'} textColor={textColor}>
+        <List spacing={4} pt={2} fontFamily={theme.fonts.heading} fontSize={['xs', 'sm']} textColor={textColor}>
           <HStack spacing={8}>
             <GoDotFill />
             <ListItem>PhD <br/>Institut FEMTO-ST <br/>Besançon, France</ListItem>

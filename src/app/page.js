@@ -1,58 +1,34 @@
 'use client'
-import Image from 'next/image'
 import { 
   Box,
   Grid,
   Button,
   Flex,
   Spacer,
-  VStack
+  VStack,
+  Image
 } from '@chakra-ui/react'
 import { theme } from '../../theme'
 import { CheckIcon, CloseIcon } from '@chakra-ui/icons'
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import Content from '@/components/content'
 
 
-function getWindowDimensions() {
-  const { innerWidth: width, innerHeight: height } = window;
-  return {
-    width,
-    height
-  };
-}
-
-function useWindowDimensions() {
-  const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
-
-  useEffect(() => {
-    function handleResize() {
-      setWindowDimensions(getWindowDimensions());
-    }
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  return windowDimensions;
-}
-
 export default function Home() {
-  const { height, width } = useWindowDimensions();
+
   const [colorMode, setColorMode] = useState(true)
   const [content, showContent] = useState('')
 
   return (
     <Grid minH='100vh' bg={colorMode ? '#F7F6F2' : '#1A1A1A'}>
-      {/* <Box w={['350px', '700px']} py={[8, 16]} position={'absolute'} left={'50%'} transform="translate(-50%, 0)">  */}
-      <Box w={width < 500 ? width : '700px'} px={[4, 0]} py={[8, 16]} position={'absolute'} left={'50%'} transform="translate(-50%, 0)">
+      <Box w={['100%', '700px']} px={[4, 0]} py={[8, 16]} position={'absolute'} left={'50%'} transform="translate(-50%, 0)">
         <Flex>
           <Image
             src="/me2_test.svg"
             alt="main picture"
-            width={width < 500 ? 200 : 300}
-            height={width < 500 ? 200 : 300}
+            width={[200, 300]}
+            height={[200, 300]}
             priority
           />
 

@@ -4,17 +4,17 @@ import Education from "./education"
 import Publications from "./publications"
 
 
-export default function Content({ content }) {
+export default function Content({ content, textColor }) {
     if (content === '') {
-      return <Main />
+      return <Main textColor={textColor} />
     }
     if (content === 'research') {
-      return <Research />
+      return <Research textColor={textColor} />
     }
     if (content === 'education') {
-      return <Education />
+      return <Education textColor={textColor} />
     }
     if (content === 'publications') {
-      return <Publications />
+      return <Publications textColor={textColor} />
     }
   }

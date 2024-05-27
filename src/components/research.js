@@ -13,15 +13,15 @@ const ChakraBox = chakra(motion.div, {
 })
 
 
-export default function Research() {
+export default function Research({ textColor }) {
     return (
       <ChakraBox
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
       >
-        <Heading pt={8} fontFamily={theme.fonts.heading} borderBottomWidth={2} borderBottomColor={"#FA7B62"}>Research</Heading>
-        <Text pt={2} fontFamily={theme.fonts.heading} fontSize={'sm'}>
+        <Heading pt={8} fontFamily={theme.fonts.heading} borderBottomWidth={2} borderBottomColor={"#FA7B62"} color={textColor}>Research</Heading>
+        <Text pt={2} fontFamily={theme.fonts.heading} fontSize={'sm'} color={textColor}>
             My research lies, broadly speaking, in the field of social cognition. 
             I study the perception of contingency or synchrony in dyadic interactions and the brain mechanisms or cues humans use to make judgements about said interactions. <br /> <br />
             The social and communicative ability of humans develops relatively early and is quite robust (see Trevarthen's TV experiment and its many variations) 

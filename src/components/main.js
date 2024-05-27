@@ -1,7 +1,6 @@
 'use client'
 import { 
   Text,
-  Stack,
   Badge,
   IconButton,
   HStack,
@@ -22,21 +21,21 @@ const ChakraBox = chakra(motion.div, {
 })
 
 
-export default function Main() {
+export default function Main({ textColor }) {
     return (
       <ChakraBox
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
       >
-        <Text pt={8} fontFamily={theme.fonts.heading} fontSize={'lg'} fontWeight={'bold'}>Rudradeep Guha</Text>
-        <Text pt={4} fontFamily={theme.fonts.heading} fontSize={'lg'} fontWeight={'bold'}>PhD Student @ Institut FEMTO-ST</Text>
+        <Text pt={8} fontFamily={theme.fonts.heading} fontSize={'lg'} fontWeight={'bold'} color={textColor}>Rudradeep Guha</Text>
+        <Text pt={4} fontFamily={theme.fonts.heading} fontSize={'lg'} fontWeight={'bold'} color={textColor}>PhD Student @ Institut FEMTO-ST</Text>
   
         <Wrap pt={8} direction='row'>
-          <Badge variant={'outline'}>social cognition</Badge>
-          <Badge variant={'outline'}>temporal response functions</Badge>
-          <Badge variant={'outline'}>disorders of consciousness</Badge>
-          <Badge variant={'outline'}>reverse correlation</Badge>
+          <Badge variant={'outline'} color={textColor}>social cognition</Badge>
+          <Badge variant={'outline'} color={textColor}>temporal response functions</Badge>
+          <Badge variant={'outline'} color={textColor}>disorders of consciousness</Badge>
+          <Badge variant={'outline'} color={textColor}>reverse correlation</Badge>
         </Wrap>
   
         <HStack pt={8}>
@@ -48,6 +47,7 @@ export default function Main() {
               size="lg" 
               _hover={{textColor: "#FA7B62"}}
               _active={{textColor:"#FA7B62"}}
+              color={textColor}
             />
           </Link>
           <Link href="https://github.com/rudradeep4" isExternal>
@@ -58,6 +58,7 @@ export default function Main() {
               size="lg" 
               _hover={{textColor:"#FA7B62"}}
               _active={{textColor:"#FA7B62"}}
+              color={textColor}
             />
           </Link>
           <Link href="https://orcid.org/0000-0002-0227-6401" isExternal>
@@ -68,6 +69,7 @@ export default function Main() {
               size="lg" 
               _hover={{textColor: "#FA7B62"}}
               _active={{textColor:"#FA7B62"}}
+              color={textColor}
             />
           </Link>
           <Link href="https://scholar.google.com/citations?user=Zj_w2T8AAAAJ&hl=en&oi=ao" isExternal>
@@ -78,6 +80,7 @@ export default function Main() {
               size="lg" 
               _hover={{textColor: "#FA7B62"}}
               _active={{textColor:"#FA7B62"}}
+              color={textColor}
             />
           </Link>
         </HStack>

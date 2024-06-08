@@ -21,7 +21,7 @@ export default function Research({ textColor }) {
         exit={{ opacity: 0 }}
       >
         <Heading pt={8} fontFamily={theme.fonts.heading} borderBottomWidth={2} borderBottomColor={"#FA7B62"} color={textColor}>Research</Heading>
-        <Text pt={2} fontFamily={theme.fonts.heading} fontSize={['xs', 'sm']} color={textColor}>
+        <Text pt={2} fontFamily={theme.fonts.body} fontSize={['sm', 'md']} color={textColor}>
             My research lies, broadly speaking, in the field of social cognition. 
             I study the perception of contingency or synchrony in dyadic interactions and the brain mechanisms or cues humans use to make judgements about said interactions. <br /> <br />
             The social and communicative ability of humans develops relatively early and is quite robust (see Trevarthen's TV experiment and its many variations) 

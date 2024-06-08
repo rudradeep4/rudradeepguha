@@ -28,8 +28,8 @@ export default function Main({ textColor }) {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
       >
-        <Text pt={8} fontFamily={theme.fonts.heading} fontSize={'lg'} fontWeight={'bold'} color={textColor}>Rudradeep Guha</Text>
-        <Text pt={4} fontFamily={theme.fonts.heading} fontSize={'lg'} fontWeight={'bold'} color={textColor}>PhD Student @ Institut FEMTO-ST</Text>
+        <Text pt={4} fontFamily={theme.fonts.heading} fontSize={'xl'} fontWeight={'bold'} color={textColor}>Rudradeep Guha</Text>
+        <Text pt={8} fontFamily={theme.fonts.heading} fontSize={'md'} fontWeight={'bold'} color={textColor}>PhD Student, <br />Institut FEMTO-ST</Text>
   
         <Wrap pt={8} direction='row'>
           <Badge variant={'outline'} color={textColor}>social cognition</Badge>

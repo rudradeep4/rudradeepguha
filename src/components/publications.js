@@ -23,7 +23,7 @@ export default function Publications({ textColor }) {
         exit={{ opacity: 0 }}
       >
         <Heading pt={8} fontFamily={theme.fonts.heading} borderBottomWidth={2} borderBottomColor={"#FA7B62"} color={textColor}>Publications</Heading>
-        <List spacing={4} pt={2} fontFamily={theme.fonts.heading} fontSize={['xs', 'sm']} textColor={textColor}>
+        <List spacing={4} pt={2} fontFamily={theme.fonts.body} fontSize={['sm', 'md']} textColor={textColor}>
           <ListItem>
             <Link href={'https://doi.org/10.1101/2023.11.30.569391'} target='_blank'>
               <i>Cortical responses to looming sources are explained away by the auditory periphery</i>

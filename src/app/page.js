@@ -22,7 +22,7 @@ export default function Home() {
 
   return (
     <Grid minH='100vh' bg={colorMode ? '#F7F6F2' : '#1A1A1A'}>
-      <Box w={['100%', '700px']} px={[4, 0]} py={[8, 16]} position={'absolute'} left={'50%'} transform="translate(-50%, 0)">
+      <Box w={['100%', '700px']} px={[4, 0]} py={8} position={'absolute'} left={'50%'} transform="translate(-50%, 0)">
         <Flex>
           <Image
             src="/me2_test.svg"

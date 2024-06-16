@@ -6,7 +6,9 @@ import {
   Flex,
   Spacer,
   VStack,
-  Image
+  Image,
+  useColorMode,
+  useColorModeValue,
 } from '@chakra-ui/react'
 import { theme } from '../../theme'
 import { CheckIcon, CloseIcon } from '@chakra-ui/icons'
@@ -17,19 +19,21 @@ import Content from '@/components/content'
 
 export default function Home() {
 
-  const [colorMode, setColorMode] = useState(true)
+  const { colorMode, toggleColorMode } = useColorMode()
   const [content, showContent] = useState('')
 
+  const bg = useColorModeValue('#F7F6F2', '#1A1A1A')
+  const fg = useColorModeValue('#1A1A1A', '#F7F6F2')
+
   return (
-    <Grid minH='100vh' bg={colorMode ? '#F7F6F2' : '#1A1A1A'}>
-      <Box w={['100%', '700px']} px={[4, 0]} py={8} position={'absolute'} left={'50%'} transform="translate(-50%, 0)">
+    <Grid bg={bg} h='100vh' overflow={'scroll'} display={'flex'} flexDir={'column'} alignItems={'center'}>
+      <Box w={['100%', '700px']} px={[4, 0]} py={8}>
         <Flex>
           <Image
             src="/me2_test.svg"
             alt="main picture"
             width={[200, 300]}
             height={[200, 300]}
-            priority
           />
 
           <Spacer />
@@ -40,12 +44,12 @@ export default function Home() {
               aria-label="Dark Mode Switch" 
               size={["sm", "lg"]} 
               fontFamily={theme.fonts.heading}
-              onClick={() => setColorMode(!colorMode)}
+              onClick={toggleColorMode}
               _hover={{textColor: "#FA7B62"}}
               _active={{textColor:"#FA7B62"}}
-              textColor={colorMode ? '#1A1A1A' : '#F7F6F2'}
+              textColor={fg}
             >
-              dark-mode [ {colorMode ? <CloseIcon boxSize={2} /> : <CheckIcon boxSize={2} />} ]
+              dark-mode [ {colorMode === 'light' ? <CloseIcon boxSize={2} /> : <CheckIcon boxSize={2} />} ]
             </Button>
 
             <Button
@@ -56,7 +60,7 @@ export default function Home() {
               onClick={() => showContent('')}
               _hover={{textColor: "#FA7B62"}}
               _active={{textColor:"#FA7B62"}}
-              textColor={content === '' ? "#FA7B62" : colorMode ? '#1A1A1A' : '#F7F6F2'}
+              textColor={content === '' ? "#FA7B62" : fg}
               mt={[4, 8]}
             >
               home
@@ -70,7 +74,7 @@ export default function Home() {
               onClick={() => showContent('research')}
               _hover={{textColor: "#FA7B62"}}
               _active={{textColor:"#FA7B62"}}
-              textColor={content === 'research' ? "#FA7B62" : colorMode ? '#1A1A1A' : '#F7F6F2'}
+              textColor={content === 'research' ? "#FA7B62" : fg}
             >
               research
             </Button>
@@ -83,7 +87,7 @@ export default function Home() {
               onClick={() => showContent('education')}
               _hover={{textColor: "#FA7B62"}}
               _active={{textColor:"#FA7B62"}}
-              textColor={content === 'education' ? "#FA7B62" : colorMode ? '#1A1A1A' : '#F7F6F2'}
+              textColor={content === 'education' ? "#FA7B62" : fg}
             >
               education
             </Button>
@@ -96,7 +100,7 @@ export default function Home() {
               onClick={() => showContent('publications')}
               _hover={{textColor: "#FA7B62"}}
               _active={{textColor:"#FA7B62"}}
-              textColor={content === 'publications' ? "#FA7B62" : colorMode ? '#1A1A1A' : '#F7F6F2'}
+              textColor={content === 'publications' ? "#FA7B62" : fg}
             >
               publications
             </Button>
@@ -104,7 +108,10 @@ export default function Home() {
         </Flex>
 
         <AnimatePresence initial={false}>
-          <Content content={content} textColor={colorMode ? '#1A1A1A' : '#F7F6F2'}/>
+          <Content 
+            content={content} 
+            textColor={fg}
+          />
         </AnimatePresence>
       </Box>
     </Grid>

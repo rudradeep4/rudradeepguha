@@ -1,14 +1,14 @@
 import {
     Heading,
+    Text,
     List,
     ListItem,
-    Text,
+    ListIcon,
     chakra,
     shouldForwardProp,
-    Flex,
-    Spacer
+    HStack,
 } from '@chakra-ui/react'
-import { GoDotFill } from "react-icons/go";
+import { MdCircle } from "react-icons/md";
 import { motion, isValidMotionProp } from 'framer-motion';
 import { theme } from '../../theme'
 
@@ -28,27 +28,24 @@ export default function Education({ textColor }) {
         <Heading pt={8} fontFamily={theme.fonts.heading} borderBottomWidth={2} borderBottomColor={"#FA7B62"} color={textColor}>Education</Heading>
         <List spacing={8} pt={2} fontFamily={theme.fonts.body} fontSize={['sm', 'md']} textColor={textColor}>
           <ListItem>
-            <Flex>
-              <ListItem>PhD <br/>Institut FEMTO-ST <br/>Besançon, France</ListItem>
-              <Spacer />
-              <Text>2022 - </Text>
-            </Flex>
+            <HStack>
+              <ListIcon as={MdCircle} />
+              <Text>PhD (2022 - )<br/>Institut FEMTO-ST <br/>Besançon, France</Text>
+            </HStack>
           </ListItem>
 
           <ListItem>
-            <Flex>
-              <ListItem>M.Sc. in Cognitive Science <br/>National Research University Higher School of Economics <br/>Moscow, Russia</ListItem>
-              <Spacer />
-              <Text>2018 - 2020</Text>
-            </Flex>          
+            <HStack>
+              <ListIcon as={MdCircle} />
+              <Text>M.Sc. in Cognitive Science (2018 - 2020)<br/>National Research University Higher School of Economics <br/>Moscow, Russia</Text>
+            </HStack>
           </ListItem>
 
           <ListItem>
-            <Flex>
-            <ListItem>B.Sc. in Computer Science <br/>Ashoka University <br/>New Delhi, India</ListItem>
-            <Spacer />
-            <Text>2015 - 2018</Text>
-            </Flex>
+            <HStack>
+              <ListIcon as={MdCircle} />
+              <Text>B.Sc. in Computer Science (2015 - 2018)<br/>Ashoka University <br/>New Delhi, India</Text>
+            </HStack>
           </ListItem>
         </List>
       </ChakraBox>

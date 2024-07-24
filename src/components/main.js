@@ -34,8 +34,8 @@ export default function Main({ textColor }) {
         <Wrap pt={8} direction='row'>
           <Badge variant={'outline'} color={textColor}>social cognition</Badge>
           <Badge variant={'outline'} color={textColor}>temporal response functions</Badge>
+          <Badge variant={'outline'} color={textColor}>interpersonal synchrony</Badge>
           <Badge variant={'outline'} color={textColor}>disorders of consciousness</Badge>
-          <Badge variant={'outline'} color={textColor}>reverse correlation</Badge>
         </Wrap>
   
         <HStack pt={8}>
